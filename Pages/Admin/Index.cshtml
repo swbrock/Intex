@@ -1,0 +1,26 @@
+﻿@page "/admin"
+
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+
+@model Intex.Pages.Admin.IndexModel
+
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link href="~/css/styles.css" rel="stylesheet" />
+    <title>Accident Report Admin</title>
+    <base href="/" />
+</head>
+
+<body>
+
+    <component type="typeof(Intex.Pages.Admin.Routed)" render-mode="Server" />
+    <script src="/_framework/blazor.server.js"></script>
+</body>
+</html>
