@@ -28,5 +28,9 @@ namespace Intex.Controllers
             return View();
         }
 
+        public IActionResult DriveSafe()
+        {
+            return View();
+        }
     }
 }
