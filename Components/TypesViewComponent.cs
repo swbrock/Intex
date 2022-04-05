@@ -1,5 +1,7 @@
-﻿//using System;
+﻿using System;
+using System.Linq;
 //using System.Threading.Tasks;
+//using Intex.Models;
 //using Microsoft.AspNetCore.Components;
 //using Microsoft.AspNetCore.Mvc;
 
@@ -7,18 +9,18 @@
 //{
 //    public class TypesViewComponent : ViewComponent
 //    {
-//        private ITeamsRepository repoT { get; set; }
-//        public TypesViewComponent(ITeamsRepository tempT)
+//        private IAccidentsRepository repo { get; set; }
+//        public TypesViewComponent(IAccidentsRepository temp)
 //        {
-//            repoT = tempT;
+//            repo = temp;
 //        }
 
 //        public async Task<IViewComponentResult> InvokeAsync()
 //        {
 //            ViewBag.SelectedType = RouteData?.Values["county"];
 
-//            var types = repoT.Teams
-//                .Select(x => x.TeamName)
+//            var types = repo.Accidents
+//                .Select(x => x.COUNTY_NAME)
 //                .Distinct()
 //                .OrderBy(x => x);
 //            return View(types);

@@ -6,14 +6,18 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Configuration;
+
 
 namespace Intex.Controllers
 {
     public class HomeController : Controller
     {
-        //private DBContext context { get; set; }
+        private IAccidentsRepository repo { get; set; }
+
+        public HomeController(IAccidentsRepository temp)
+        {
+            repo = temp;
+        }
 
         public IActionResult Index()
         {
@@ -27,14 +31,16 @@ namespace Intex.Controllers
 
         public IActionResult Analysis()
         {
+            //var accidents = repo.crashes.ToList();
+                
+
             return View();
         }
 
         public IActionResult MapAnalysis(string county)
         {
-            //var accidents = context.Accidents
-            //    .Include("Team")
-            //    .Where(x => x.County == county || County == null)
+            //var accidents = repo.Accidents
+            //    .Where(x => x.COUNTY_NAME == county || county == null)
             //    .ToList();
 
             return View();
