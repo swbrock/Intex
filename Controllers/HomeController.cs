@@ -39,11 +39,12 @@ namespace Intex.Controllers
 
         public IActionResult MapAnalysis(string county)
         {
-            //var accidents = repo.Accidents
-            //    .Where(x => x.COUNTY_NAME == county || county == null)
-            //    .ToList();
+            var accidents = repo.Accidents
+                .Where(x => x.COUNTY_NAME == county || county == null)
+                .Where(x => x.CITY == "Provo")
+                .ToList();
 
-            return View();
+            return View(accidents);
         }
 
         public IActionResult DriveSafe()
